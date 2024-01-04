@@ -1,0 +1,14 @@
+{% extends 'announcements/base.html' %}
+
+{% block content %}
+<div class="borrow-container">
+    <h2>Formularz Wypożyczenia</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="function-buttons">
+            <button type="submit" class="normal-button">Wypożycz</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

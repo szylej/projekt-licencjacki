@@ -1,0 +1,17 @@
+{% extends 'announcements/base.html' %}
+
+{% block content %}
+  <h2 class="hello">Moje Ogłoszenia</h2>
+  <div class="home-container">
+    {% for entry in data %}
+    <div class="announcement">
+      <div class="picture-field">
+      {% if entry.photo %}
+        <img src="{{ entry.photo.url }}" width=250>
+      {% endif %}
+      </div>
+      <h3><a href="{% url 'detail_announcement' pk=entry.pk %}">{{ entry.name }}</a></h3>
+    </div>
+    {% endfor  %}
+  </div>
+{% endblock %}

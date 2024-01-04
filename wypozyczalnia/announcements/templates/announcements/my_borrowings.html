@@ -1,0 +1,21 @@
+{% extends 'announcements/base.html' %}
+
+{% block content %}
+
+  <h2 class="hello">Moje Wypożyczenia</h2>
+
+  <div class="home-container">
+    {% for entry in borrowings %}
+    <div class="borrowing">
+      <h3>{{ entry.announcement }}</h3>
+      <h4>{{ entry.borrow_date}}</h4>
+      <h4 class="return-date">{{ entry.return_date }}</h4>
+      <h5>Pozostało {{ entry.days_left }} dni do końca wypożyczenia.</h5>
+      <h5>Cena: {{ entry.total_price }} zł.</h5>
+      <div class="function-buttons">
+        <a class="normal-button" href="{% url 'return_announcement' pk=entry.pk%}">Zwróć</a>
+      </div>
+    </div>
+    {% endfor  %}
+  </div>
+{% endblock %}

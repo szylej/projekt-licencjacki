@@ -1,0 +1,8 @@
+{% extends 'announcements/base.html' %}
+
+{% block content %}
+    <div class="delete-container">
+        <h3>Oferta niedostępna, ponieważ produkt jest aktualnie wypożyczany.</h3>
+        <a class="normal-button" href="{% url 'home' %}">Wróć</a>
+    </div>
+{% endblock %}

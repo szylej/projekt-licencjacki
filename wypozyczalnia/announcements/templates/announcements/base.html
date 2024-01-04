@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <link rel="shortcut icon" href="#" />
+  </head>
+  <body>
+    <div class="top-bar">
+      <h5 class="site-title">Wypożyczalnia</h5>
+      <nav class="nav-bar">
+        <a class="normal-button" href="{% url 'home' %}">HOME</a>
+        {% if user.is_authenticated %}
+        <a class="normal-button" href="{% url 'add_announcement' %}">Dodaj ogłoszenie</a>
+        <a class="normal-button" href="{% url 'my_announcements' %}">Moje ogłoszenia</a>
+        <a class="normal-button" href="{% url 'my_borrowings' %}">Moje wypożyczenia</a>
+        <a class="danger-button" href="JavaScript:{document.getElementById('logout').submit()}">Wyloguj się</a>
+        {% else %}
+        <a class="normal-button" href="{% url 'signup_page' %}">Zarejestruj się</a>
+        <a class="normal-button" href="{% url 'login_page' %}">Zaloguj się</a>
+        {% endif %}
+      </nav>
+      {% if user.is_authenticated %}
+      <form id="logout" method="POST" action="{% url 'logout_page' %}">
+        {% csrf_token %}
+        <input type="hidden">
+      </form>
+      {% endif %}
+    </div>
+    {% block content %}
+    {% endblock %}
+    </body>
+</html>

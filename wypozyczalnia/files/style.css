@@ -1,0 +1,317 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+    max-width: 100%;
+}
+
+.top-bar{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    border-bottom: 1px solid grey;
+}
+
+.site-title{
+    flex: 1;
+    font-size: 15px;
+    padding-left: 20px;
+}
+
+.nav-bar{
+    flex: 1;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.normal-button{
+    border: 1px solid blue;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.normal-button:hover{
+    background-color: blue;
+    color:white;
+}
+
+.danger-button{
+    border: 1px solid red;
+    padding: 5px;
+    text-decoration: none;
+    color:black;
+}
+
+.danger-button:hover{
+    background-color: red;
+    color:white;
+}
+
+.hello{
+    text-align: center;
+}
+
+.searchform{
+    text-align: center;
+    padding: 20px;
+}
+
+.searchform-input{
+    width: 200px;
+    height: 30px;
+}
+
+.home-container{
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.announcement{
+    background-color: white;
+    width: 250px;
+    height: 250px;
+    margin: 15px;
+    padding: 10px;
+    border: 1px dashed black;
+}
+
+.picture-field{
+    width:250px;
+    height: 141px;
+    background-color: lightgray;
+}
+
+.announcement > h3, a{
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.announcement > h3:hover, a:hover{
+    background-color: black;
+    color: white;
+}
+
+.announcement-detail-side{
+    position: relative;
+    margin-top: 100px;
+}
+
+.announcement-detail-side > .normal-button{
+    float: right;
+    margin: 100px;
+}
+
+.announcement-detail-picture{
+    height: 300px;
+    width: 540px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.announcement-detail{
+    position: relative;
+    background-color: white;
+    width:800px;
+    height:500px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    border: 1px dashed black;
+}
+
+.announcement-detail > a{
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.announcement-detail > h3{
+    font-size: 30px;
+}
+
+.announcement-detail > h4{
+    width: auto;
+    display: inline-block;
+}
+
+.announcement-detail-author{
+    float:right;
+}
+
+.announcement-comments{
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.function-buttons{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom:20px;
+}
+
+.function-buttons > h2{
+    float:right;
+}
+
+.announcement-comments > h2{
+    text-align: center;
+}
+
+.announcement-comments > form{
+    text-align: center;
+}
+
+.comment{
+    position: relative;
+    width: 800px;
+    min-height: 180px;
+    background-color: white;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    border: 1px dashed black;
+}
+
+.comment > h4{
+    width: auto;
+    display: inline-block;
+    padding: 20px;
+}
+
+.comment > h3{
+    width: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 15px;
+}
+
+.comment-content{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.comment-author {
+    float:right;
+}
+
+.edit-container{
+    background-color: white;
+    width:500px;
+    height:500px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    border: 1px dashed black;
+}
+
+.delete-container{
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-container{
+    background-color: white;
+    width:400px;
+    height:400px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px dashed black;
+}
+
+.login-container > form{
+    padding: 20px;
+}
+
+.alert-danger{
+    color:red;
+}
+
+.signup-container{
+    background-color: white;
+    width:400px;
+    height:400px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px dashed black;
+}
+
+.signup-container > form{
+    padding: 20px;
+}
+
+.borrowing{
+    position: relative;
+    background-color: white;
+    width: 250px;
+    height: 250px;
+    margin: 15px;
+    padding: 10px;
+    border: 1px dashed black;
+}
+
+.borrowing > h3,a{
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.borrowing > h4 {
+    width: auto;
+    display: inline-block;
+}
+
+.return-date {
+    float:right;
+}
+
+.borrowing > h5 {
+    text-align: center;
+}
+
+.borrow-container{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-align: center;
+    border: 1px dashed black;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    padding: 20px;
+    margin-top: 100px;
+    border: 1px dashed black;
+}
+
+.borrow-error{
+    
+}

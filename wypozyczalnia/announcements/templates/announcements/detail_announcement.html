@@ -1,0 +1,54 @@
+{% extends 'announcements/base.html' %}
+
+{% block content %}
+    <div class="announcement-detail-side">
+        <div class="announcement-detail-picture">
+            {% if announcement.photo %}
+                <img src="{{ announcement.photo.url }}"
+                width=540>
+            {% endif %}
+        </div>
+        <div class="announcement-detail">
+            <h4>{{ announcement.create_date }}</h4>
+            <h4 class="announcement-detail-author">{{ announcement.author }}</h4>
+            <h2>Ocena zgłoszenia: {{ average_rating }}</h2>
+            <h3>{{ announcement.name }}</h3>
+            <h2>Cena: {{ announcement.price }} zł / za dzień</h2>
+            <h4>Kategoria: {{ announcement.get_type_display }}</h4>
+            <h5>Opis:</h5>
+            <text>{{ announcement.description }}</text>
+        <div class="function-buttons">
+            <a class="normal-button" href="{% url 'home' %}">Wróć</a>
+        {% if user != announcement.author %}
+            <a class="normal-button" href="{% url 'borrow_announcement' pk=announcement.pk %}">Wypożycz</a>
+        {% else %}
+            <a class="normal-button" href="{% url 'edit_announcement' pk=announcement.pk %}">Edytuj</a>
+            <a class="danger-button" href="{% url 'delete_announcement' pk=announcement.pk %}">Usuń</a>
+        {% endif %}
+        </div>
+        </div>
+        <div class="announcement-comments">
+        <h2>Dodaj Komentarz</h2>
+        <form method="POST" class="rating-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="normal-button">Dodaj</button>
+        </form>
+        <h2>Komentarze:</h2>
+        {% if not rating %}
+            <p>Brak komentarzy</p>
+        {% else %}
+            {% for rate in rating %}
+            <div class="comment">
+                <h4 class="comment-author">{{ rate.user }}</h4>
+                <h4>{{ rate.create_date }}</h4>
+                <h3>Ocena: {{ rate.grade }}/10</h3>
+                <div class="comment-content">
+                    {{ rate.comment }}
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}

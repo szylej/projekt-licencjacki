@@ -1,0 +1,24 @@
+{% extends 'announcements/base.html' %}
+
+{% block content %}
+  <div class="searchform">
+  <form method="POST" action="{% url 'search_announcements' %}">
+      {% csrf_token %}
+      <input class="searchform-input" type="search" placeholder="Szukaj ogłoszeń" name="searched">
+      <button class="normal-button" type="submit">Szukaj</button>
+  </form>
+  </div>
+  <h2 class="hello">{{ userStatus }}</h2>
+  <div class="home-container">
+    {% for entry in data %}
+    <div class="announcement">
+      <div class="picture-field">
+      {% if entry.photo %}
+        <img src="{{ entry.photo.url }}" width=250>
+      {% endif %}
+      </div>
+      <h3><a href="{% url 'detail_announcement' pk=entry.pk %}">{{ entry.name }}</a></h3>
+    </div>
+    {% endfor  %}
+  </div>
+{% endblock %}

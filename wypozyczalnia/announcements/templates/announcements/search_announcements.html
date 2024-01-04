@@ -1,0 +1,20 @@
+{% extends 'announcements/base.html' %}
+
+{% block content %}
+    <h2 class="hello">Wyniki wyszukiwania dla frazy "{{ searched }}"</h2>
+    <div class="home-container">
+        {% if searched %}
+        <br/>
+        {% for announcement in announcements %}
+        <div class="announcement">
+            <div class="picture-field">
+                {% if announcement.photo %}
+                    <img src="{{ announcement.photo.url }}" width=250>
+                {% endif %}
+            </div>
+            <h3><a href="{% url 'detail_announcement' pk=announcement.pk %}">{{ announcement.name }}</a></h3>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
